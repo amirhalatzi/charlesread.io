@@ -133,7 +133,7 @@ const implementation = function (fastify, options, next) {
               log.trace(`pathExempt DOES include ${originalUrl}`)
               return next()
             }
-            log.trace(`verification was successful, decodedToken: ${decodedToken}`)
+            log.trace('verification was successful, decodedToken: %j', decodedToken)
             req[opts.nameCredentialsDecorator] = decodedToken
             return next()
           })
