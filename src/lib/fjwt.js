@@ -3,6 +3,8 @@
 const URL = require('url').URL
 const qs = require('querystring')
 
+const log = require('~/lib/logger.js')()
+
 const deepExtend = require('deep-extend')
 const jwksClient = require('jwks-rsa')
 const jsonwebtoken = require('jsonwebtoken')
@@ -100,6 +102,7 @@ const implementation = function (fastify, options, next) {
     // callback endpoint that will be redirected to once successfully authenticated with the authentication provider
     // this endpoint will convert the authorization code to a JWT and set a cookie with the JWT
     fastify.get(opts.pathCallback, async function (req, reply) {
+      log.trace(`callback endpoint requested, code: ${req.query.code}`)
       const jwtResponse = await functionGetJWT(req.query.code, opts)
       return reply
         .setCookie(opts.cookie.name, jwtResponse.id_token, opts.cookie)

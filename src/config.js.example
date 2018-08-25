@@ -22,7 +22,8 @@ config.fjwt = {
     '/login',
     '/callback',
     '/'
-  ]
+  ],
+  pathSuccessRedirect: 'https://www.charlesread.io'
 }
 
 module.exports = config

@@ -22,7 +22,8 @@ config.fjwt = {
     '/login',
     '/callback',
     '/'
-  ]
+  ],
+  pathSuccessRedirect: '/'
 }
 
 module.exports = config
