@@ -2,7 +2,9 @@
 
 const path = require('path')
 
-const log = require(path.join(__dirname, 'logger.js'))()
+const config = require('~/config.js')
+const log = require('~/lib/logger.js')()
+const fjwt = require('~/lib/fjwt.js')
 
 const dir = require('node-dir')
 const fastify = require('fastify')()
@@ -18,6 +20,8 @@ app.start = async function () {
     await fastify.register(require(pluginPaths[i]))
   }
   log.trace('finished registering plugins')
+
+  await fastify.register(fjwt, config.fjwt)
 
   await fastify.listen(3000, '0.0.0.0')
   log.trace('fastify is listening')
