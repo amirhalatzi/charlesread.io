@@ -83,10 +83,10 @@ const implementation = function (fastify, options, next) {
 
   try {
 
-    log = opts.log || fastify.log
-
     // merge parameter options with default options
     opts = deepExtend({}, defaultOptions, options)
+
+    log = opts.log || fastify.log
 
     client = jwksClient({
       jwksUri: opts.urlJWKS
