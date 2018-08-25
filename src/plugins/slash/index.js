@@ -8,7 +8,8 @@ module.exports = function (fastify, opts, next) {
       message: 'welcome to charlesread.io',
       itis: new Date(),
       iam: address,
-      repo: 'https://github.com/charlesread/charlesread.io'
+      repo: 'https://github.com/charlesread/charlesread.io',
+      dockerImage: 'https://hub.docker.com/r/charlesread/charlesread.io'
     }
     if (req.credentials) {
       payload.hey = req.credentials.sub
