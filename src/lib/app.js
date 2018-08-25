@@ -4,7 +4,7 @@ const path = require('path')
 
 const config = require('~/config.js')
 const log = require('~/lib/logger.js')()
-const fjwt = require('~/lib/fjwt.js')
+const fjwt = require('fastify-jwt-webapp')
 
 const dir = require('node-dir')
 const fastify = require('fastify')({
