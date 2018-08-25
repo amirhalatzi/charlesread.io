@@ -19,12 +19,12 @@ const defaultOptions = {
   pathExempt: ['/login', '/callback'],
   cookie: {
     domain: 'localhost',
-    path: '*',
+    path: '/',
     // add JWT expiration to current time
     expires: ((Math.floor((Date.now()) / 1000)) + 86400) * 1000,
     httpOnly: true,
-    sameSite: false,
-    // sameSite: 'lax',
+    // sameSite: false,
+    sameSite: 'lax',
     name: 'token',
     secure: true
   },
