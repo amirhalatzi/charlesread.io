@@ -7,7 +7,10 @@ const log = require('~/lib/logger.js')()
 const fjwt = require('~/lib/fjwt.js')
 
 const dir = require('node-dir')
-const fastify = require('fastify')()
+const fastify = require('fastify')({
+  logger: log,
+  level: 'trace'
+})
 
 const app = {}
 
