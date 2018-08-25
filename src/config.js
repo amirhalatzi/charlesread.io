@@ -16,7 +16,7 @@ config.fjwt = {
   redirect_uri: process.env['K_REDIRECT_URI'] || 'http://localhost:3000/callback',
   cookie: {
     domain: process.env['K_DOMAIN'] || 'localhost',
-    secure: false
+    secure: process.env['K_PROD'] === 'false' ? false : true
   },
   pathExempt: [
     '/login',

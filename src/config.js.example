@@ -16,7 +16,7 @@ config.fjwt = {
   redirect_uri: process.env['K_REDIRECT_URI'],
   cookie: {
     domain: process.env['K_DOMAIN'],
-    secure: true
+    secure: process.env['K_PROD'] === 'false' ? false : true
   },
   pathExempt: [
     '/login',
