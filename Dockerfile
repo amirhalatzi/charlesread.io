@@ -5,7 +5,7 @@ WORKDIR /usr/src/app
 
 COPY ./src /usr/src/app
 
-RUN cd /usr/src/app; rm -rf node_modules; npm i
+RUN cd /usr/src/app; rm -rf node_modules; cp config.js.example config.js; npm i
 
 EXPOSE 8080
 

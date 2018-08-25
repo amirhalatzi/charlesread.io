@@ -12,7 +12,7 @@ module.exports = function (fastify, opts, next) {
     if (req.credentials) {
       payload.hey = req.credentials.sub
     } else {
-      payload.login = 'https://charlesread.io/login'
+      payload.login = 'https://www.charlesread.io/login'
     }
     reply.send(payload)
   })
