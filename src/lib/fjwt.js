@@ -23,7 +23,8 @@ const defaultOptions = {
     // add JWT expiration to current time
     expires: ((Math.floor((Date.now()) / 1000)) + 86400) * 1000,
     httpOnly: true,
-    sameSite: 'lax',
+    sameSite: false,
+    // sameSite: 'lax',
     name: 'token',
     secure: true
   },
