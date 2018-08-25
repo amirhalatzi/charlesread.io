@@ -3,14 +3,16 @@
 const URL = require('url').URL
 const qs = require('querystring')
 
-const log = require('~/lib/logger.js')()
-
 const deepExtend = require('deep-extend')
 const jwksClient = require('jwks-rsa')
 const jsonwebtoken = require('jsonwebtoken')
 
 const fp = require('fastify-plugin')
 const request = require('request')
+
+let log
+let opts
+let client
 
 const defaultOptions = {
   scope: 'openid',
@@ -23,17 +25,14 @@ const defaultOptions = {
     // add JWT expiration to current time
     expires: ((Math.floor((Date.now()) / 1000)) + 86400) * 1000,
     httpOnly: true,
-    // sameSite: false,
     sameSite: 'lax',
     name: 'token',
     secure: true
   },
   nameCredentialsDecorator: 'credentials',
-  pathSuccessRedirect: '/'
+  pathSuccessRedirect: '/',
+  log: log
 }
-
-let opts
-let client
 
 const getKey = function (header, callback) {
   client.getSigningKey(header.kid, function (err, key) {
@@ -83,6 +82,8 @@ const functionGetJWT = function (_authorizationCode, _opts) {
 const implementation = function (fastify, options, next) {
 
   try {
+
+    log = opts.log || fastify.log
 
     // merge parameter options with default options
     opts = deepExtend({}, defaultOptions, options)
