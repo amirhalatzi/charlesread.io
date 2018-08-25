@@ -9,7 +9,7 @@ module.exports = function (fastify, opts, next) {
       itis: new Date(),
       iam: address,
       repo: 'https://github.com/charlesread/charlesread.io',
-      dockerImage: 'https://hub.docker.com/r/charlesread/charlesread.io'
+      image: 'https://hub.docker.com/r/charlesread/charlesread.io'
     }
     if (req.credentials) {
       payload.hey = req.credentials.sub
