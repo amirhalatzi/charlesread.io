@@ -1,5 +1,7 @@
 'use strict'
 
+// const log = require('~/lib/logger')()
+
 const config = {}
 
 config.logger = {
@@ -24,6 +26,10 @@ config.fjwt = {
     '/'
   ],
   pathSuccessRedirect: '/'
+  // ,
+  // authorizationCallback: async function (claims, req, reply) {
+  //   log.trace(`claims: ${claims}`)
+  }
 }
 
 module.exports = config
