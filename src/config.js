@@ -29,7 +29,7 @@ config.fjwt = {
   // ,
   // authorizationCallback: async function (claims, req, reply) {
   //   log.trace(`claims: ${claims}`)
-  }
+  // }
 }
 
 module.exports = config
