@@ -26,10 +26,10 @@ config.fjwt = {
     '/'
   ],
   pathSuccessRedirect: '/'
-  // ,
-  // authorizationCallback: async function (claims, req, reply) {
-  //   log.trace(`claims: ${claims}`)
-  // }
+  ,
+  authorizationCallback: async function (claims, req, reply) {
+    console.log(`claims: ${claims}`)
+  }
 }
 
 module.exports = config
