@@ -13,6 +13,7 @@ module.exports = function (fastify, opts, next) {
       cookies: req.cookies
     }
     if (req.credentials) {
+      fastify.credentials.trace(req.credentials)
       payload.credentials = req.credentials
       payload.hey = req.credentials.sub
     } else {
