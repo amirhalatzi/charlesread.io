@@ -16,7 +16,7 @@ module.exports = function (fastify, opts, next) {
     if (req.cookies.token) {
       const tokenDecoded = jwt.decode(req.cookies.token, {complete: true})
       payload.tokenDecoded = tokenDecoded
-      payload.jwtExpiration = new Date(tokenDecoded)
+      payload.jwtExpiration = new Date(tokenDecoded * 1000)
     }
     if (req.credentials) {
       fastify.credentials.trace(req.credentials)
