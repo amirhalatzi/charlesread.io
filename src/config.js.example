@@ -25,7 +25,7 @@ config.fjwt = {
   ],
   pathSuccessRedirect: 'https://www.charlesread.io',
   authorizationCallback: async function (claims, req, reply) {
-    log.trace(`claims: ${claims}`)
+    console.log('claims: %o', claims)
   }
 }
 
