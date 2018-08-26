@@ -1,6 +1,7 @@
 'use strict'
 
 const address = require('ip').address()
+const jwt = require('jsonwebtoken')
 
 module.exports = function (fastify, opts, next) {
   fastify.get('/', (req, reply) => {
@@ -11,6 +12,9 @@ module.exports = function (fastify, opts, next) {
       repo: 'https://github.com/charlesread/charlesread.io',
       image: 'https://hub.docker.com/r/charlesread/charlesread.io',
       cookies: req.cookies
+    }
+    if (req.cookies.token) {
+      payload.tokenDecoded = jwt.decode(req.cookies.token, {complete: true})
     }
     if (req.credentials) {
       fastify.credentials.trace(req.credentials)
