@@ -19,7 +19,6 @@ module.exports = function (fastify, opts, next) {
       payload.jwtExpiration = new Date(tokenDecoded.payload.exp * 1000)
     }
     if (req.credentials) {
-      fastify.credentials.trace(req.credentials)
       payload.credentials = req.credentials
       payload.hey = req.credentials.sub
     } else {
