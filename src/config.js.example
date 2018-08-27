@@ -23,10 +23,7 @@ config.fjwt = {
     '/callback',
     '/'
   ],
-  pathSuccessRedirect: 'https://www.charlesread.io',
-  authorizationCallback: async function (claims, req, reply) {
-    console.log('claims: %o', claims)
-  }
+  pathSuccessRedirect: 'https://www.charlesread.io'
 }
 
 module.exports = config
