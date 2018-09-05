@@ -8,6 +8,7 @@ config.logger = {
 }
 
 config.fjwt = {
+  service: 'auth0',
   urlLogin: 'https://charlesread.auth0.com/authorize',
   urlAuthorizationCode: 'https://charlesread.auth0.com/oauth/token',
   urlJWKS: 'https://charlesread.auth0.com/.well-known/jwks.json',
@@ -23,10 +24,7 @@ config.fjwt = {
     '/callback',
     '/'
   ],
-  pathSuccessRedirect: 'https://www.charlesread.io',
-  authorizationCallback: async function (claims, req, reply) {
-    console.log('claims: %o', claims)
-  }
+  pathSuccessRedirect: 'https://www.charlesread.io'
 }
 
 module.exports = config

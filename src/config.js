@@ -1,7 +1,5 @@
 'use strict'
 
-// const log = require('~/lib/logger')()
-
 const config = {}
 
 config.logger = {
@@ -10,6 +8,7 @@ config.logger = {
 }
 
 config.fjwt = {
+  service: 'auth0',
   urlLogin: 'https://charlesread.auth0.com/authorize',
   urlAuthorizationCode: 'https://charlesread.auth0.com/oauth/token',
   urlJWKS: 'https://charlesread.auth0.com/.well-known/jwks.json',
@@ -18,7 +17,8 @@ config.fjwt = {
   redirect_uri: process.env['K_REDIRECT_URI'] || 'http://localhost:3000/callback',
   cookie: {
     domain: process.env['K_DOMAIN'] || 'localhost',
-    secure: process.env['K_PROD'] === 'false' ? false : true
+    secure: false
+    // secure: process.env['K_PROD'] === 'false' ? false : true
   },
   pathExempt: [
     '/login',
@@ -26,10 +26,6 @@ config.fjwt = {
     '/'
   ],
   pathSuccessRedirect: '/'
-  ,
-  authorizationCallback: async function (claims, req, reply) {
-    console.log(`claims: ${claims}`)
-  }
 }
 
 module.exports = config
