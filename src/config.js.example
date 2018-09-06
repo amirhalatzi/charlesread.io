@@ -9,8 +9,8 @@ config.logger = {
 
 config.fjwt = {
   service: 'auth0',
-  urlLogin: 'https://charlesread.auth0.com/authorize',
-  urlAuthorizationCode: 'https://charlesread.auth0.com/oauth/token',
+  urlAuthorize: 'https://charlesread.auth0.com/authorize',
+  urlToken: 'https://charlesread.auth0.com/oauth/token',
   urlJWKS: 'https://charlesread.auth0.com/.well-known/jwks.json',
   client_id: process.env['K_CLIENT_ID'],
   client_secret: process.env['K_CLIENT_SECRET'],
