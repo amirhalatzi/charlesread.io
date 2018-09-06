@@ -2,9 +2,7 @@
 
 const path = require('path')
 
-const config = require('~/config.js')
 const log = require('~/lib/logger.js')()
-const fjwt = require('fastify-jwt-webapp')
 
 const fastify = require('fastify')({
   logger: log,
@@ -53,7 +51,7 @@ app.start = async function () {
   }
   log.trace('finished registering plugins')
 
-  await fastify.register(fjwt, config.fjwt)
+  // await fastify.register(fjwt, config.fjwt)
 
   await fastify.listen(3000, '0.0.0.0')
   log.trace('fastify is listening')
