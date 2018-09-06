@@ -1,0 +1,8 @@
+<lasso-page package-path="./browser.json"/>
+<include("../layout/template/index.marko", input)>
+<@main>
+<pre>
+${JSON.stringify(input.payload, undefined, 2)}
+</pre>
+</@main>
+</include>
