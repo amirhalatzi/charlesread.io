@@ -2,3 +2,5 @@
 .idea
 src/node_modules
 src/config.js
+src/public/static/*.js
+src/public/static/*.css
