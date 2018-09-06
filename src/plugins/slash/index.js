@@ -19,9 +19,9 @@ module.exports = function (fastify, opts, next) {
 
     payload.message = 'welcome to charlesread.io'
 
-    // if (!req.credentials) {
-    //   payload.login = 'https://www.charlesread.io/login'
-    // }
+    if (!req.credentials) {
+      payload.login = 'https://www.charlesread.io/login'
+    }
 
     payload.ifYoureCurious = {
       repo: 'https://github.com/charlesread/charlesread.io',
