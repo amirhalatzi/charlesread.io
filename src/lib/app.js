@@ -5,8 +5,11 @@ const path = require('path')
 const log = require('~/lib/logger.js')()
 
 const fastify = require('fastify')({
-  logger: log,
-  level: 'trace'
+  logger: {
+    level: 'trace',
+    stream: process.stdout,
+    prettyPrint: true
+  }
 })
 
 // tells marko to not output .js "temp" files
