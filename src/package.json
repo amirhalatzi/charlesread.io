@@ -15,7 +15,7 @@
     "@lasso/marko-taglib": "^1.0.12",
     "deep-extend": "^0.6.0",
     "fastify": "^1.10.0",
-    "fastify-jwt-webapp": "^0.2.1",
+    "fastify-jwt-webapp": "^0.3.0",
     "fastify-static": "^0.14.0",
     "ip": "^1.1.5",
     "jsonwebtoken": "^8.3.0",
