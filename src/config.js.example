@@ -24,7 +24,8 @@ config.fjwt = {
     '/callback',
     '/'
   ],
-  pathSuccessRedirect: 'https://www.charlesread.io'
+  pathSuccessRedirect: 'https://www.charlesread.io',
+  cacheJWKSAge: 10000
 }
 
 module.exports = config
