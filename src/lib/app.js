@@ -25,6 +25,8 @@ app.start = async function () {
   lasso.configure({
     outputDir: path.join(__dirname, '..', 'public', 'static'),
     urlPrefix: '/public/static',
+    fingerprintsEnabled: false,
+    includeSlotNames: true,
     plugins: ['lasso-marko', 'lasso-less']
   })
   log.trace('finished lasso initialization')
