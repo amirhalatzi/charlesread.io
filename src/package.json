@@ -14,7 +14,7 @@
   "dependencies": {
     "@lasso/marko-taglib": "^1.0.12",
     "deep-extend": "^0.6.0",
-    "fastify": "^1.11.2",
+    "fastify": "^1.14.6",
     "fastify-jwt-webapp": "^0.4.2",
     "fastify-static": "^0.14.0",
     "ip": "^1.1.5",
