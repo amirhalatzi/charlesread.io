@@ -23,7 +23,7 @@
     "lasso-less": "^3.0.1",
     "lasso-marko": "^2.4.4",
     "marko": "^4.13.4",
-    "moment": "^2.22.2",
+    "moment": "^2.29.1",
     "moment-timezone": "^0.5.21",
     "node-dir": "^0.1.17",
     "pino": "^5.5.0",
